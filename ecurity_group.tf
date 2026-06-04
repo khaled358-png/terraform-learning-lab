@@ -1,7 +1,7 @@
 resource "aws_security_group" "ssh_security" {
   name        = "ssh-security-group"
   description = "Allow SSH access from anywhere"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.my_vpc.id
 
   ingress {
     description = "SSH Access"
