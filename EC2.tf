@@ -1,6 +1,7 @@
 resource "aws_instance" "web_server" {
-  ami           = "ami-091138d0f0d41ff90"
-  instance_type = "t2.micro"
+  #ami           = "ami-091138d0f0d41ff90"
+  ami = var.ami
+  instance_type = var.instance_type
 
   subnet_id = aws_subnet.public_subnet_1.id
 
@@ -16,8 +17,9 @@ resource "aws_instance" "web_server" {
 }
 
 resource "aws_instance" "private_server" {
-  ami           = "ami-048700f1f7f2e1a70"
-  instance_type = "t2.micro"
+  #ami           = "ami-048700f1f7f2e1a70"
+  ami = var.ami
+  instance_type = var.instance_type
 
   subnet_id = aws_subnet.private_subnet_1.id
 

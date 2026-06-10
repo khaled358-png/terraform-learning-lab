@@ -42,7 +42,7 @@ resource "aws_security_group" "internal_security" {
     from_port   = 3000
     to_port     = 3000
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.my_vpc.cidr_block]
+    cidr_blocks = [var.vpc_cidr]
   }
 
   egress {
